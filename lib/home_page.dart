@@ -144,27 +144,53 @@ class MyHomePage extends StatelessWidget {
                           MainAxisAlignment
                               .spaceAround,
                       children: [
-                        MyCards2(
-                          textColor: Colors.white,
-                          icon:
-                              Icons.warning_amber,
-                          bgColor: Colors.red,
-                          borderColor: Colors.red,
-                          heading:
-                              'Emergency SOS',
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder:
+                                    (context) =>
+                                        MySosPage(),
+                              ),
+                            );
+                          },
+                          child: MyCards2(
+                            textColor:
+                                Colors.white,
+                            icon: Icons
+                                .warning_amber,
+                            bgColor: Colors.red,
+                            borderColor:
+                                Colors.red,
+                            heading:
+                                'Emergency SOS',
+                          ),
                         ),
-                        MyCards2(
-                          textColor: Color(
-                            0xFF1447E6,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    MyMapsPage(),
+                              ),
+                            );
+                          },
+                          child: MyCards2(
+                            textColor: Color(
+                              0xFF1447E6,
+                            ),
+                            icon:
+                                Icons.location_on,
+                            bgColor: Color(
+                              0xFFEFF6FF,
+                            ),
+                            borderColor: Color(
+                              0xFFC9E0FD,
+                            ),
+                            heading: 'View Map',
                           ),
-                          icon: Icons.location_on,
-                          bgColor: Color(
-                            0xFFEFF6FF,
-                          ),
-                          borderColor: Color(
-                            0xFFC9E0FD,
-                          ),
-                          heading: 'View Map',
                         ),
                       ],
                     ),

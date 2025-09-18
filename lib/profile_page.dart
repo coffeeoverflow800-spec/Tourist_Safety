@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tourist_safety_app/alerts_page.dart';
 import 'package:tourist_safety_app/home_page.dart';
+import 'package:tourist_safety_app/maps_page.dart';
+import 'package:tourist_safety_app/sos_page.dart';
 import 'card_home_page.dart';
 
 class MyProfilePge extends StatelessWidget {
@@ -35,20 +38,53 @@ class MyProfilePge extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
-            NavigationIcons(
-              icon: Icons.location_on_outlined,
-              text: 'Maps',
-              color: Colors.black,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MyMapsPage(),
+                  ),
+                );
+              },
+              child: NavigationIcons(
+                icon: Icons.location_on_outlined,
+                text: 'Maps',
+                color: Colors.black,
+              ),
             ),
-            NavigationIcons(
-              icon: Icons.warning_amber,
-              text: 'SOS',
-              color: Colors.black,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MySosPage(),
+                  ),
+                );
+              },
+              child: NavigationIcons(
+                icon: Icons.warning_amber,
+                text: 'SOS',
+                color: Colors.black,
+              ),
             ),
-            NavigationIcons(
-              icon: Icons.notifications_none,
-              text: 'Alerts',
-              color: Colors.black,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        MyAlertsPage(),
+                  ),
+                );
+              },
+              child: NavigationIcons(
+                icon: Icons.notifications_none,
+                text: 'Alerts',
+                color: Colors.black,
+              ),
             ),
             Container(
               width: 60,
