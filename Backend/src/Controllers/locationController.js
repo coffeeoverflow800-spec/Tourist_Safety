@@ -4,6 +4,24 @@ const LocationLog = require("../Models/LocationLog");
 exports.createLocationLog = async (req, res) => {
   try {
     const newLocationLog = await LocationLog.create(req.body);
+
+    // Fetch the tourist document to get the emergency contact info
+    const tourist = await Tourist.findById(req.body.tourist);
+
+    if (
+      tourist &&
+      tourist.personalInfo &&
+      tourist.personalInfo.emergencyContact
+    ) {
+      // Send an alert to the emergency contact
+      const emergencyContactPhone =
+        tourist.personalInfo.emergencyContact.phoneNumber;
+      const message = `SOS Alert: Your emergency contact, ${tourist.personalInfo.name}, is sharing their location. Current location: Lat ${newLocationLog.location.coordinates[1]}, Lon ${newLocationLog.location.coordinates[0]}.`;
+
+      // This assumes a function in your notifier utility
+      // await notifier.sendSMS(emergencyContactPhone, message);
+    }
+
     res.status(201).json({
       status: "success",
       data: {
