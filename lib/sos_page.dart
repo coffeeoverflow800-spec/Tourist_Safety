@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tourist_safety_app/SOS_page.dart';
 import 'package:tourist_safety_app/alerts_page.dart';
 import 'package:tourist_safety_app/card_home_page.dart';
 import 'package:tourist_safety_app/home_page.dart';
 import 'package:tourist_safety_app/maps_page.dart';
 import 'package:tourist_safety_app/profile_page.dart';
-import 'card_home_page.dart';
 
 class MySosPage extends StatelessWidget {
   const MySosPage({super.key});
