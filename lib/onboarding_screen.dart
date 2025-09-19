@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tourist_safety_app/home_page.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});

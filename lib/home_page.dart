@@ -269,7 +269,7 @@ class MyHomePage extends StatelessWidget {
           crossAxisAlignment:
               CrossAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               width: 60,
               child: Card(
                 elevation: 6,

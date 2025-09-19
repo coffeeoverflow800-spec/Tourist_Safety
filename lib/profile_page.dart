@@ -86,7 +86,7 @@ class MyProfilePge extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
-            Container(
+            SizedBox(
               width: 60,
               child: Card(
                 elevation: 6,
